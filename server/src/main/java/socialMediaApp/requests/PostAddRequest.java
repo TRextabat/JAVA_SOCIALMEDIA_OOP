@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class PostAddRequest {
     private int userId;
     private String Description;
+    private String text;
 }

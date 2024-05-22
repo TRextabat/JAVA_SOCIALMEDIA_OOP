@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import socialMediaApp.requests.CommentAddRequest;
 import socialMediaApp.responses.comment.CommentGetResponse;
 import socialMediaApp.services.CommentService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/comments")
+@SecurityRequirement(name = "bearerAuth")
 public class CommentsController {
 
     private final CommentService commentService;

@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import socialMediaApp.responses.postImage.PostImageResponse;
 import socialMediaApp.services.PostImageService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/postimages")
+@SecurityRequirement(name = "bearerAuth")
 public class PostImagesController {
 
     private final PostImageService postImageService;

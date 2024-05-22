@@ -3,6 +3,8 @@ package socialMediaApp.api;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import socialMediaApp.requests.PostAddRequest;
 import socialMediaApp.responses.post.PostGetResponse;
 import socialMediaApp.services.PostService;
@@ -11,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/posts")
+@SecurityRequirement(name = "bearerAuth")
 public class PostsController {
     private final PostService postService;
 

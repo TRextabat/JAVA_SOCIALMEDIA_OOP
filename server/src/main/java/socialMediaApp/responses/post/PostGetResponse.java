@@ -15,4 +15,5 @@ public class PostGetResponse {
     private String userName;
     private String userLastName;
     private String Description;
+    private String text;
 }
