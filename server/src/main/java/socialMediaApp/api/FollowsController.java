@@ -5,9 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import socialMediaApp.requests.FollowRequest;
 import socialMediaApp.services.FollowService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
 @RequestMapping("/api/follows")
+@SecurityRequirement(name = "bearerAuth")
 public class FollowsController {
 
     private final FollowService followService;

@@ -6,11 +6,13 @@ import org.springframework.web.bind.annotation.*;
 import socialMediaApp.requests.LikeRequest;
 import socialMediaApp.responses.like.LikeResponse;
 import socialMediaApp.services.LikeService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/likes")
+@SecurityRequirement(name = "bearerAuth")
 public class LikesController {
 
     private final LikeService likeService;

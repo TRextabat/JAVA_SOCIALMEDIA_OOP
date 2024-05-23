@@ -3,6 +3,8 @@ package socialMediaApp.api;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import socialMediaApp.requests.UserAddRequest;
 import socialMediaApp.responses.user.UserResponse;
 import socialMediaApp.services.UserService;
@@ -11,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@SecurityRequirement(name = "bearerAuth")
 public class UsersController {
     private final UserService userService;
 
